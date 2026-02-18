@@ -1,4 +1,3 @@
-
 services:
   s1db:
     image: postgres:latest
@@ -20,6 +19,23 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    depends_on:
+      - s1db
+    networks:
+      - s1_network
+
+  s1app:
+    image: prawee/strapi:latest
+    container_name: 68-s1-app
+    ports:
+      - "${APP_PORT}:1337"
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: s1db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
     depends_on:
       - s1db
     networks:
