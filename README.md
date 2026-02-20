@@ -1,4 +1,4 @@
-## Cybersec Group Project
+## Cyber security Group Project
 
 This is a group project for a cybersecurity class.
 
