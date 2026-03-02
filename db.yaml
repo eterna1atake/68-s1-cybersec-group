@@ -1,4 +1,4 @@
-services: 
+services:
   s1db:
     image: postgres:latest
     container_name: 68-s1-database
@@ -8,5 +8,5 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
-    
-    
+    networks:
+      - s1_network
