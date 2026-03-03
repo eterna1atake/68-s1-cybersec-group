@@ -1,6 +1,7 @@
 include:
   - db.yaml
   - admin.yaml
+  - app.yaml
 
 networks:
   s1_network:
