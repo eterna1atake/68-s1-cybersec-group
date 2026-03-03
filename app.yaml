@@ -5,9 +5,14 @@ services:
     ports:
       - ${APP_PORT}:1337
     environment:
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
       DATABASE_CLIENT: ${DATABASE_CLIENT}
-      DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_NAME: ${POSTGRES_DB}
+      DATABASE_HOST: s1db
       DATABASE_PORT: ${DATABASE_PORT}
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_USERNAME: ${POSTGRES_USER}
+
+    depends_on:
+      - s1db
+    networks:
+      - s1_network
