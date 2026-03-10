@@ -1,1 +1,21 @@
+# SSL Certificates (สำคัญมาก ห้ามเอาขึ้น Git)
+*.key
+*.crt
+
+# Environment Files
 .env
+.env.local
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Docker Logs
+*.log
+npm-debug.log*
+
+# Strapi / Node related
+node_modules/
+.cache/
+build/
+.tmp/

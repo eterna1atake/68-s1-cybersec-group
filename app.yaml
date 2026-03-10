@@ -2,8 +2,6 @@ services:
   s1app:
     image: prawee/strapi:latest
     container_name: 68-s1-app
-    ports:
-      - ${APP_PORT}:1337
     environment:
       DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
       DATABASE_CLIENT: ${DATABASE_CLIENT}
