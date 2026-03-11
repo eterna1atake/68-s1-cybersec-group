@@ -14,6 +14,21 @@ This is a group project for a cybersecurity class.
 cp env.example .env
 ```
 
+## Set a Virtual Hosting in local
+```sh
+sudo nano /etc/hosts 
+```
+### Save = Ctrl + O
+### Exit = Ctrl + X
+
+## Generate HTTPS and SSL Certificate
+```sh
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+-keyout nginx-selfsigned.key \
+-out nginx-selfsigned.crt \
+-subj "/C=TH/ST=Bangkok/L=Bangsue/O=KMUTNB/CN=cybersec.group"
+```
+
 ## Running a services
 ### Database
 ```
