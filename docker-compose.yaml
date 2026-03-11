@@ -3,6 +3,22 @@ include:
   - admin.yaml
   - app.yaml
 
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_proxy
+    ports:
+      - "80:80"   # สำหรับ HTTP ปกติ
+      - "443:443" # สำหรับ HTTPS (ปลอดภัย)
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
+      - ./nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
+    networks:
+      - s1_network
+    depends_on:
+      - s1app
+
 networks:
   s1_network:
     driver: bridge

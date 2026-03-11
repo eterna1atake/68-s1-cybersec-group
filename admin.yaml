@@ -11,3 +11,8 @@ services:
       - s1db
     networks:
       - s1_network
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  pgadmin_data:
