@@ -14,3 +14,8 @@ services:
       - s1db
     networks:
       - s1_network
+    volumes:
+      - strapi_uploads:/opt/app/public/uploads
+
+volumes:
+  strapi_uploads:
